@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #eecf70, #fbd84d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.calculator {
+  width: 45%;
+  height: 85%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.display {
+  background: #fff;
+  color: #000;
+  font-size: 3rem;
+  text-align: right;
+  padding: 10px;
+  height: 60px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.display.disabled {
+  background: #f0f0f0;
+  color: #e6e4e4;
+  filter: blur(0.5px);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  padding: 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+.operator {
+  background: #ff9500;
+  color: #fff;
+}
+
+
+.arrow{
+    font-weight: bold;
+}
+
+.equal {
+  grid-column: span 2;
+  background: #00cc66;
+  color: #fff;
+}
+
+.equal:active {
+  animation: equalAnimation 0.5s ease-in-out;
+}
+
+@keyframes equalAnimation {
+  0%, 100% { transform: scale(1); }
+  25%, 75% { transform: scale(1.01); }
+  50% { transform: scale(1.02); }
+}
+
+#toggle-btn {
+  background-color: #ff0000;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#toggle-btn.active {
+  background-color: #00cc66;
+}
